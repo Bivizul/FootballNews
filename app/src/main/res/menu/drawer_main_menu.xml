@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/home"
+        android:title="Главная" />
+
+    <item android:title="Настройки">
+        <menu>
+            <item
+                android:id="@+id/wallpaper"
+                android:title="Обои" />
+            <item
+                android:id="@+id/swDarkTheme"
+                android:title="Темная тема"
+                app:actionLayout="@layout/switch_item"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/swNotifications"
+                android:title="Уведомления"
+                app:actionLayout="@layout/switch_item"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+
+    <item
+        android:title="Выход" >
+        <menu>
+            <item
+                android:id="@+id/exit"
+                android:title="Выход"/>
+
+        </menu>
+    </item>
+
+</menu>
