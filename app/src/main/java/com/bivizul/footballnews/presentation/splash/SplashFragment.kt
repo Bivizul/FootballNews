@@ -10,8 +10,6 @@ import androidx.navigation.fragment.findNavController
 import coil.load
 import com.bivizul.footballnews.R
 import com.bivizul.footballnews.databinding.FragmentSplashBinding
-import com.bivizul.footballnews.databinding.FragmentStartBinding
-import com.bivizul.footballnews.presentation.start.StartViewModel
 
 class SplashFragment : Fragment() {
 
@@ -30,12 +28,12 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.imageView.load("http://65.109.10.118/5footballnews/ball.jpg")
+        binding.imageView.load("http://65.109.10.118/5footballnews/images/ball.jpg")
 
 //        val back = activity?.findViewById<ImageView>(R.id.imgBackActivity)
 //        back?.load("http://65.109.10.118/4rateguide/background.jpg")
         view.postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_startFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_teamSelectFragment)
         }, 1000)
     }
 

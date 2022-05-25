@@ -5,6 +5,7 @@ buildscript {
         coroutines_version = "1.6.1"
         room_version = "2.4.2"
         retrofit_version = "2.9.0"
+        okhttp_version = "4.9.3"
         picasso_version = "2.71828"
         nav_version = "2.4.2"
     }

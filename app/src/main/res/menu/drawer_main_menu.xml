@@ -5,8 +5,8 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/home"
-        android:title="Главная" />
+        android:id="@+id/selectTeam"
+        android:title="Выбор команды" />
 
     <item android:title="Настройки">
         <menu>

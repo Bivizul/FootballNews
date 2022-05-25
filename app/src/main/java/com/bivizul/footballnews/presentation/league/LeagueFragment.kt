@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bivizul.footballnews.R
+import dagger.hilt.android.AndroidEntryPoint
 
-class LeagueFragment : Fragment() {
+@AndroidEntryPoint
+class LeagueFragment(private val teamSelect:String) : Fragment() {
 
     private lateinit var viewModel: LeagueViewModel
 

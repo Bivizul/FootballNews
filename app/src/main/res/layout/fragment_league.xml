@@ -1,13 +1,1731 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".presentation.league.LeagueFragment">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/imgLogoLeft"
+                        android:layout_width="28dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvScore"
+                        app:layout_constraintEnd_toStartOf="@+id/tvScore"
+                        app:layout_constraintTop_toTopOf="@+id/tvScore"
+                        tools:src="@tools:sample/avatars" />
+
+                    <ImageView
+                        android:id="@+id/imgLogoRight"
+                        android:layout_width="28dp"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvScore"
+                        app:layout_constraintStart_toEndOf="@+id/tvScore"
+                        app:layout_constraintTop_toTopOf="@+id/tvScore"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvRightTeam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvScore"
+                        app:layout_constraintStart_toEndOf="@+id/imgLogoRight" />
+
+                    <TextView
+                        android:id="@+id/tvScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        tools:text="TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dividerCardOne" />
+
+                    <TextView
+                        android:id="@+id/tvLeftTeam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvScore"
+                        app:layout_constraintEnd_toStartOf="@+id/imgLogoLeft" />
+
+                    <TextView
+                        android:id="@+id/tvTittleCardOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Previous matches"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/dividerCardOne"
+                        android:layout_width="398dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTittleCardOne" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvTeam6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam6CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum6CG" />
+
+                    <TextView
+                        android:id="@+id/tvNum6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="6"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum5CG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam6CG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum6CG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum6CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum6CG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvW6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="29"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6CG" />
+
+                    <TextView
+                        android:id="@+id/tvD6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="6"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6CG" />
+
+                    <TextView
+                        android:id="@+id/tvL6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="3"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6CG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="70"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6CG" />
+
+                    <TextView
+                        android:id="@+id/tvPP6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        tools:text="93"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPCG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPP5CG" />
+
+                    <TextView
+                        android:id="@+id/tvP6CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="38"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6CG" />
+
+                    <TextView
+                        android:id="@+id/tvTeam5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam5CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum5CG" />
+
+                    <TextView
+                        android:id="@+id/tvNum5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="5"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum4CG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam5CG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum5CG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum5CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum5CG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvW5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="29"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5CG" />
+
+                    <TextView
+                        android:id="@+id/tvD5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="6"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5CG" />
+
+                    <TextView
+                        android:id="@+id/tvL5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="3"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5CG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="70"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5CG" />
+
+                    <TextView
+                        android:id="@+id/tvPP5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        tools:text="93"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPCG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPP4CG" />
+
+                    <TextView
+                        android:id="@+id/tvP5CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="38"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5CG" />
+
+                    <TextView
+                        android:id="@+id/tvNum4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="4"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum3CG" />
+
+                    <TextView
+                        android:id="@+id/tvTeam4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam4CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum4CG" />
+
+                    <TextView
+                        android:id="@+id/tvP4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="38"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4CG" />
+
+                    <TextView
+                        android:id="@+id/tvW4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="29"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4CG" />
+
+                    <TextView
+                        android:id="@+id/tvD4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="6"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4CG" />
+
+                    <TextView
+                        android:id="@+id/tvL4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="3"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4CG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="70"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4CG" />
+
+                    <TextView
+                        android:id="@+id/tvPP4CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        tools:text="93"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPCG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPP3CG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam4CG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum4CG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum4CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum4CG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvNum3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        android:text="3"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum1CG" />
+
+                    <TextView
+                        android:id="@+id/tvTeam3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam3CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum3CG" />
+
+                    <TextView
+                        android:id="@+id/tvP3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="38"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3CG" />
+
+                    <TextView
+                        android:id="@+id/tvW3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="29"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3CG" />
+
+                    <TextView
+                        android:id="@+id/tvD3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="6"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3CG" />
+
+                    <TextView
+                        android:id="@+id/tvL3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="3"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3CG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="70"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3CG" />
+
+                    <TextView
+                        android:id="@+id/tvPP3CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="93"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum3CG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam3CG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum3CG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum3CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum3CG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvTeam2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam2CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum2CG" />
+
+                    <TextView
+                        android:id="@+id/tvNum2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="2"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum1CG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam2CG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum2CG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum2CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum2CG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvW2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="29"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2CG" />
+
+                    <TextView
+                        android:id="@+id/tvD2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="6"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2CG" />
+
+                    <TextView
+                        android:id="@+id/tvL2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="3"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2CG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="70"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2CG" />
+
+                    <TextView
+                        android:id="@+id/tvPP2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="93"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum2CG" />
+
+                    <TextView
+                        android:id="@+id/tvP2CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="38"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2CG" />
+
+                    <TextView
+                        android:id="@+id/tvPCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="P"
+                        app:layout_constraintEnd_toStartOf="@+id/tvWCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
+
+                    <TextView
+                        android:id="@+id/tvWCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="W"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
+
+                    <TextView
+                        android:id="@+id/tvDCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="D"
+                        app:layout_constraintEnd_toStartOf="@+id/tvLCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
+
+                    <TextView
+                        android:id="@+id/tvLCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="L"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinusCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="+/-"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
+
+                    <TextView
+                        android:id="@+id/tvPPCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="P"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvTeamCG" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Championship Group"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="398dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                    <TextView
+                        android:id="@+id/tvTeamCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Team"
+                        app:layout_constraintStart_toStartOf="@+id/tvTeam1CG"
+                        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+                    <TextView
+                        android:id="@+id/tvNum1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeamCG" />
+
+                    <TextView
+                        android:id="@+id/tvTeam1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        tools:text="TextView"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam1CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum1CG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam1CG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum1CG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum1CG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum1CG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvP1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="38"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1CG" />
+
+                    <TextView
+                        android:id="@+id/tvD1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="6"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1CG" />
+
+                    <TextView
+                        android:id="@+id/tvL1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="3"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1CG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="70"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1CG" />
+
+                    <TextView
+                        android:id="@+id/tvPP1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="93"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum1CG" />
+
+                    <TextView
+                        android:id="@+id/tvW1CG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="29"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWCG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWCG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1CG" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvTeam6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam6RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum6RG"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvNum6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="6"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1RG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum5RG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam6RG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum6RG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum6RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum6RG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvW6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6RG"
+                        tools:text="29" />
+
+                    <TextView
+                        android:id="@+id/tvD6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6RG"
+                        tools:text="6" />
+
+                    <TextView
+                        android:id="@+id/tvL6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6RG"
+                        tools:text="3" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6RG"
+                        tools:text="70" />
+
+                    <TextView
+                        android:id="@+id/tvPP6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPRG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPP5RG"
+                        tools:text="93" />
+
+                    <TextView
+                        android:id="@+id/tvP6RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP6RG"
+                        tools:text="38" />
+
+                    <TextView
+                        android:id="@+id/tvTeam5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam5RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum5RG"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvNum5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="5"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1RG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum4RG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam5RG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum5RG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum5RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum5RG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvW5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5RG"
+                        tools:text="29" />
+
+                    <TextView
+                        android:id="@+id/tvD5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5RG"
+                        tools:text="6" />
+
+                    <TextView
+                        android:id="@+id/tvL5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5RG"
+                        tools:text="3" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5RG"
+                        tools:text="70" />
+
+                    <TextView
+                        android:id="@+id/tvPP5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPRG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPP4RG"
+                        tools:text="93" />
+
+                    <TextView
+                        android:id="@+id/tvP5RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP5RG"
+                        tools:text="38" />
+
+                    <TextView
+                        android:id="@+id/tvNum4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="4"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1RG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum3RG" />
+
+                    <TextView
+                        android:id="@+id/tvTeam4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam4RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum4RG"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvP4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4RG"
+                        tools:text="38" />
+
+                    <TextView
+                        android:id="@+id/tvW4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4RG"
+                        tools:text="29" />
+
+                    <TextView
+                        android:id="@+id/tvD4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4RG"
+                        tools:text="6" />
+
+                    <TextView
+                        android:id="@+id/tvL4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4RG"
+                        tools:text="3" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP4RG"
+                        tools:text="70" />
+
+                    <TextView
+                        android:id="@+id/tvPP4RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPRG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPP3RG"
+                        tools:text="93" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam4RG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum4RG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum4RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum4RG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvNum3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        android:text="3"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1RG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum1RG" />
+
+                    <TextView
+                        android:id="@+id/tvTeam3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam3RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum3RG"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvP3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3RG"
+                        tools:text="38" />
+
+                    <TextView
+                        android:id="@+id/tvW3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3RG"
+                        tools:text="29" />
+
+                    <TextView
+                        android:id="@+id/tvD3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3RG"
+                        tools:text="6" />
+
+                    <TextView
+                        android:id="@+id/tvL3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3RG"
+                        tools:text="3" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP3RG"
+                        tools:text="70" />
+
+                    <TextView
+                        android:id="@+id/tvPP3RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum3RG"
+                        tools:text="93" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam3RG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum3RG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum3RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum3RG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvTeam2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam2RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum2RG"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvNum2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="2"
+                        app:layout_constraintStart_toStartOf="@+id/tvNum1RG"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum1RG" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam2RG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum2RG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum2RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum2RG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvW2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2RG"
+                        tools:text="29" />
+
+                    <TextView
+                        android:id="@+id/tvD2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2RG"
+                        tools:text="6" />
+
+                    <TextView
+                        android:id="@+id/tvL2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2RG"
+                        tools:text="3" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2RG"
+                        tools:text="70" />
+
+                    <TextView
+                        android:id="@+id/tvPP2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum2RG"
+                        tools:text="93" />
+
+                    <TextView
+                        android:id="@+id/tvP2RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP2RG"
+                        tools:text="38" />
+
+                    <TextView
+                        android:id="@+id/tvPRG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="P"
+                        app:layout_constraintEnd_toStartOf="@+id/tvWRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPRG" />
+
+                    <TextView
+                        android:id="@+id/tvWRG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="W"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPRG" />
+
+                    <TextView
+                        android:id="@+id/tvDRG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="D"
+                        app:layout_constraintEnd_toStartOf="@+id/tvLRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPRG" />
+
+                    <TextView
+                        android:id="@+id/tvLRG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="L"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPRG" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinusRG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="+/-"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPPRG" />
+
+                    <TextView
+                        android:id="@+id/tvPPRG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="P"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvTeamRG" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Relegation Group"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="398dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                    <TextView
+                        android:id="@+id/tvTeamRG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Team"
+                        app:layout_constraintStart_toStartOf="@+id/tvTeam1RG"
+                        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+                    <TextView
+                        android:id="@+id/tvNum1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeamRG" />
+
+                    <TextView
+                        android:id="@+id/tvTeam1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgTeam1RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum1RG"
+                        tools:text="TextView" />
+
+                    <ImageView
+                        android:id="@+id/imgTeam1RG"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvNum1RG"
+                        app:layout_constraintStart_toEndOf="@+id/tvNum1RG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum1RG"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/tvP1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1RG"
+                        tools:text="38" />
+
+                    <TextView
+                        android:id="@+id/tvD1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvDRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1RG"
+                        tools:text="6" />
+
+                    <TextView
+                        android:id="@+id/tvL1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvLRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1RG"
+                        tools:text="3" />
+
+                    <TextView
+                        android:id="@+id/tvPlusMinus1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPlusMinusRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1RG"
+                        tools:text="70" />
+
+                    <TextView
+                        android:id="@+id/tvPP1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPPRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvPPRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvNum1RG"
+                        tools:text="93" />
+
+                    <TextView
+                        android:id="@+id/tvW1RG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWRG"
+                        app:layout_constraintStart_toStartOf="@+id/tvWRG"
+                        app:layout_constraintTop_toTopOf="@+id/tvPP1RG"
+                        tools:text="29" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:id="@+id/tvName7TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam6TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvP7TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName7TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvG7TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName7TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP8TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName8TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvG8TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName8TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP9TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName9TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvG9TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName9TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP10TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName10TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvG10TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName10TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvTeam10TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName10TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName10TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam9TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvTeam9TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName9TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName9TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam8TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvTeam8TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName8TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName8TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam7TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvTeam7TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName7TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName6TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam5TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvG6TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName6TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP6TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName6TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvTeam6TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName6TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName5TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam4TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvG5TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName5TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP5TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName5TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvTeam5TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName5TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName4TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam3TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvG4TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName4TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP4TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName4TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvTeam4TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName4TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName3TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam2TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvG3TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName3TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP3TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName3TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvTeam3TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName3TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvName2TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTeam1TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvG2TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName2TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvP2TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvName2TS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvTeam2TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName2TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvTittleTS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Topscorers"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="398dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTittleTS" />
+
+                    <TextView
+                        android:id="@+id/tvGTS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="G"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvPTS" />
+
+                    <TextView
+                        android:id="@+id/tvPTS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="P"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+                    <TextView
+                        android:id="@+id/tvP1TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPTS"
+                        app:layout_constraintStart_toStartOf="@+id/tvPTS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPTS"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tvG1TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/tvGTS"
+                        app:layout_constraintStart_toStartOf="@+id/tvGTS"
+                        app:layout_constraintTop_toTopOf="@+id/tvP1TS"
+                        tools:text="4" />
+
+                    <TextView
+                        android:id="@+id/tvName1TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvP1TS"
+                        tools:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvTeam1TS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/tvName1TS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName1TS"
+                        tools:text="TextView" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--    <include-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        layout="@layout/item_player"-->
+<!--        />-->
 
 </FrameLayout>
