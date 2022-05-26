@@ -12,7 +12,6 @@ data class TeamInfo(
     val manager: String,
     val chairman: String,
     val icon: String,
-    val owner: String,
     val players: List<Player>,
     val results: List<Result>
 )

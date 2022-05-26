@@ -15,7 +15,7 @@ import com.bivizul.footballnews.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PlayersFragment(private val teamSelect: String) : Fragment() {
+class PlayersFragment(private val teamSelect: Int) : Fragment() {
 
     private lateinit var viewModel: TeamViewModel
 
@@ -44,7 +44,7 @@ class PlayersFragment(private val teamSelect: String) : Fragment() {
         viewModel.teamInfo.observe(viewLifecycleOwner) {
             Log.d(Constants.TAG, "it: ${it}")
             for (element in it) {
-                if (element.name == teamSelect) {
+                if (element.id == teamSelect) {
                     viewModel.setPlayers(element.players)
 
                     Log.d(Constants.TAG, "element: $element")
@@ -65,11 +65,5 @@ class PlayersFragment(private val teamSelect: String) : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    companion object {
-
-        const val TEAM_SELECT = "TEAM_SELECT"
-
     }
 }

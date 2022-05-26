@@ -12,11 +12,13 @@ import androidx.core.internal.view.SupportMenu
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bivizul.footballnews.R
 import com.bivizul.footballnews.databinding.FragmentMainBinding
 import com.bivizul.footballnews.presentation.adapters.PagerAdapter
 import com.bivizul.footballnews.presentation.home.HomeFragment
+import com.bivizul.footballnews.presentation.viewmodels.TeamViewModel
 import com.bivizul.footballnews.utils.Constants
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
@@ -27,7 +29,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: TeamViewModel
 
     private var _binding: FragmentMainBinding? = null
     private val binding: FragmentMainBinding
@@ -64,50 +66,55 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val teamSelect = arguments?.getString(HomeFragment.TEAM_SELECT)
+        val teamSelect = arguments?.getInt(HomeFragment.TEAM_SELECT)
 
-
-
-        Log.d(Constants.TAG, "teamSelectMain: $teamSelect")
-        with(binding) {
-
-            tvYouTeam.text = teamSelect
-
-            navView.setNavigationItemSelectedListener(this@MainFragment)
-
-            imgBtBurger.setOnClickListener {
-                drawerLayout.openDrawer(GravityCompat.START)
+        viewModel = ViewModelProvider(this)[TeamViewModel::class.java]
+        viewModel.getTeamInfo()
+        viewModel.teamInfo.observe(viewLifecycleOwner) {
+            for (element in it) {
+                if (element.id == teamSelect) {
+                    binding.tvYouTeam.text = element.name
+                }
             }
 
-            viewPager.adapter = PagerAdapter(requireActivity(), teamSelect!!)
-            TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-                when (position) {
-                    0 -> tab.setText("Home")
-                    1 -> tab.setText("Result")
-                    2 -> tab.setText("League")
-                    else -> tab.setText("Players")
-                }
-            }.attach()
+            Log.d(Constants.TAG, "teamSelectMain: $teamSelect")
+            with(binding) {
 
-            tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                navView.setNavigationItemSelectedListener(this@MainFragment)
 
-                override fun onTabSelected(tab: TabLayout.Tab?) {
-                    tab?.customView?.alpha = 1F
+                imgBtBurger.setOnClickListener {
+                    drawerLayout.openDrawer(GravityCompat.START)
                 }
 
-                override fun onTabUnselected(tab: TabLayout.Tab?) {
-                    tab?.customView?.alpha = 0.1F
-                }
+                viewPager.adapter = PagerAdapter(requireActivity(), teamSelect!!)
+                TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+                    when (position) {
+                        0 -> tab.setText("Home")
+                        1 -> tab.setText("Result")
+                        2 -> tab.setText("League")
+                        else -> tab.setText("Players")
+                    }
+                }.attach()
 
-                override fun onTabReselected(tab: TabLayout.Tab?) {}
-            })
+                tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+
+                    override fun onTabSelected(tab: TabLayout.Tab?) {
+                        tab?.customView?.alpha = 1F
+                    }
+
+                    override fun onTabUnselected(tab: TabLayout.Tab?) {
+                        tab?.customView?.alpha = 0.1F
+                    }
+
+                    override fun onTabReselected(tab: TabLayout.Tab?) {}
+                })
+
+            }
 
         }
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.selectTeam -> {
                 Toast.makeText(requireContext(), "selectTeam", Toast.LENGTH_LONG).show()
@@ -118,8 +125,6 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             }
             else -> {}
         }
-
-        // после нажатий возвращем drawer на место
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }

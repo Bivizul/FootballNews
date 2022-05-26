@@ -16,7 +16,7 @@ import com.bivizul.footballnews.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ResultFragment(private val teamSelect:String) : Fragment() {
+class ResultFragment(private val teamSelect:Int) : Fragment() {
 
     private lateinit var viewModel: TeamViewModel
 
@@ -45,7 +45,7 @@ class ResultFragment(private val teamSelect:String) : Fragment() {
         viewModel.teamInfo.observe(viewLifecycleOwner) {
             Log.d(Constants.TAG, "it: ${it}")
             for (element in it) {
-                if (element.name == teamSelect) {
+                if (element.id == teamSelect) {
                     viewModel.setResults(element.results)
 
                     Log.d(Constants.TAG, "element: $element")

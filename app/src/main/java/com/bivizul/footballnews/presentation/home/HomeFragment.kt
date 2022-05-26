@@ -16,7 +16,7 @@ import com.bivizul.footballnews.utils.Constants.TAG
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment(private val teamSelect:String) : Fragment() {
+class HomeFragment(private val teamSelect:Int) : Fragment() {
 
     private lateinit var viewModel: TeamViewModel
 
@@ -41,7 +41,7 @@ class HomeFragment(private val teamSelect:String) : Fragment() {
         viewModel.teamInfo.observe(viewLifecycleOwner) {
             Log.d(TAG, "it: ${it}")
             for (element in it) {
-                if (element.name == teamSelect) {
+                if (element.id == teamSelect) {
                     Log.d(TAG, "element: $element")
                     with(binding){
                         if(element.icon.isNotEmpty()){

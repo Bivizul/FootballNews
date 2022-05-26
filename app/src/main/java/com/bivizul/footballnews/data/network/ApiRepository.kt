@@ -6,6 +6,8 @@ class ApiRepository @Inject constructor(private val apiService: ApiService) {
 
     suspend fun getTeamList() = apiService.getTeamList()
 
+    suspend fun getLeague() = apiService.getLeague()
+
 
 
 }

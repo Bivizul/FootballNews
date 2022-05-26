@@ -1,6 +1,9 @@
 package com.bivizul.footballnews.presentation.teamselect
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +15,9 @@ import com.bivizul.footballnews.R
 import com.bivizul.footballnews.databinding.FragmentTeamSelectBinding
 import com.bivizul.footballnews.presentation.main.MainFragment
 import com.bivizul.footballnews.presentation.viewmodels.TeamViewModel
+import com.bivizul.footballnews.utils.Constants
+import com.bivizul.footballnews.utils.Constants.APP_PREFERENCES
+import com.bivizul.footballnews.utils.Constants.APP_PREFERENCES_ID
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,6 +25,7 @@ class TeamSelectFragment : Fragment() {
 
     private lateinit var viewModel: TeamViewModel
     private lateinit var teamSelectionAdapter: TeamSelectionAdapter
+
 
     private var _binding: FragmentTeamSelectBinding? = null
     private val binding: FragmentTeamSelectBinding
@@ -37,24 +44,12 @@ class TeamSelectFragment : Fragment() {
 
         setupRecycleView()
 
-        val listName = listOf<String>()
-
-
         viewModel = ViewModelProvider(this)[TeamViewModel::class.java]
-
-        with(binding) {
-//            rvSearch.adapter = adapter
-
-            viewModel.getTeamInfo()
-            viewModel.teamInfo.observe(viewLifecycleOwner) {
-                teamSelectionAdapter.submitList(it)
-
-            }
-
-            btNext.setOnClickListener {
-                findNavController().navigate(R.id.action_teamSelectFragment_to_mainFragment)
-            }
+        viewModel.getTeamInfo()
+        viewModel.teamInfo.observe(viewLifecycleOwner) {
+            teamSelectionAdapter.submitList(it)
         }
+
 
     }
 
@@ -66,11 +61,20 @@ class TeamSelectFragment : Fragment() {
         setupClickListener()
     }
 
-    // короткий клик
     private fun setupClickListener() {
         teamSelectionAdapter.onTeamItemClickListener = {
+
+            val preferences =
+                requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+
+            preferences?.edit()?.putInt(APP_PREFERENCES_ID, it.id)?.apply()
+            Log.d(Constants.TAG, "preferencesTeamSelect: ${
+                preferences?.edit()?.putInt(APP_PREFERENCES_ID, it.id)?.apply()
+            }")
+
             findNavController().navigate(R.id.action_teamSelectFragment_to_mainFragment,
-            bundleOf(MainFragment.TEAM_SELECT to it.name))
+                bundleOf(MainFragment.TEAM_SELECT to it.id))
+
         }
     }
 
