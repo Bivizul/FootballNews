@@ -15,7 +15,14 @@
             app:destination="@id/mainFragment" />
         <action
             android:id="@+id/action_splashFragment_to_teamSelectFragment"
-            app:destination="@id/teamSelectFragment" />
+            app:destination="@id/teamSelectFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_answerFragment"
+            app:destination="@id/answerFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -35,4 +42,9 @@
             android:id="@+id/action_teamSelectFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/answerFragment"
+        android:name="com.bivizul.footballnews.presentation.answer.AnswerFragment"
+        android:label="fragment_answer"
+        tools:layout="@layout/fragment_answer" />
 </navigation>

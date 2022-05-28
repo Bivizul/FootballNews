@@ -9,17 +9,18 @@ import com.bivizul.footballnews.presentation.players.PlayersFragment
 import com.bivizul.footballnews.presentation.results.ResultFragment
 import com.bivizul.footballnews.utils.Constants.COUNTER_VIEWPAGER
 
-class PagerAdapter(fragmentActivity: FragmentActivity,private val teamSelect:Int) : FragmentStateAdapter(fragmentActivity) {
+class PagerAdapter(fragmentActivity: FragmentActivity, private val teamSelect: Int) :
+    FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int {
         return COUNTER_VIEWPAGER
     }
 
     override fun createFragment(position: Int): Fragment {
-        return when(position){
+        return when (position) {
             0 -> HomeFragment(teamSelect)
             1 -> ResultFragment(teamSelect)
-            2 ->LeagueFragment()
+            2 -> LeagueFragment()
             else -> PlayersFragment(teamSelect)
         }
     }

@@ -1,39 +1,28 @@
 package com.bivizul.footballnews.presentation.league
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import coil.load
+import com.bivizul.footballnews.R
 import com.bivizul.footballnews.databinding.FragmentLeagueBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LeagueFragment() : Fragment() {
+class LeagueFragment() : Fragment(R.layout.fragment_league) {
 
-    private lateinit var viewModel: LeagueViewModel
-
-    private var _binding: FragmentLeagueBinding? = null
-    private val binding: FragmentLeagueBinding
-        get() = _binding ?: throw RuntimeException("FragmentLeagueBinding is null")
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
-        _binding = FragmentLeagueBinding.inflate(layoutInflater, container, false)
-        return binding.root
-    }
+    private val viewModel by viewModels<LeagueViewModel>()
+    private val binding by viewBinding(FragmentLeagueBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[LeagueViewModel::class.java]
         viewModel.getLeague()
-        viewModel.league.observe(viewLifecycleOwner){
-            with(binding){
+        viewModel.league.observe(viewLifecycleOwner) {
+            with(binding) {
                 tvD1CG.text = it.D1CG
                 tvD2CG.text = it.D2CG
                 tvD3CG.text = it.D3CG
@@ -129,11 +118,5 @@ class LeagueFragment() : Fragment() {
                 imgTeam6CG.load(it.imgTeam6CG)
             }
         }
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

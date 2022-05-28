@@ -1,6 +1,7 @@
 buildscript {
     ext {
         kotlin_version = '1.6.21'
+        bindingVersion = "1.5.6"
         lifecycle_version = "2.4.1"
         coroutines_version = "1.6.1"
         room_version = "2.4.2"

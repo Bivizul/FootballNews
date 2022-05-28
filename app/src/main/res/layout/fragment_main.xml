@@ -19,6 +19,7 @@
             android:background="@color/dark_grey"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
+            android:transitionName="actionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -69,11 +70,13 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
-        android:background="@color/grey"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/grey"
         android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_header"
+        app:itemTextColor="@color/white"
         app:menu="@menu/drawer_main_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

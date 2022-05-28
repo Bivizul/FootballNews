@@ -1,5 +1,8 @@
 package com.bivizul.footballnews.domain.models
 
+import androidx.annotation.Keep
+
+@Keep
 data class TeamInfo(
     val id: Int,
     val name: String,
