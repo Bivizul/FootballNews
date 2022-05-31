@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import by.kirich1409.viewbindingdelegate.viewBinding
 import coil.load
 import com.bivizul.footballnews.R
@@ -20,7 +19,6 @@ class LeagueFragment() : Fragment(R.layout.fragment_league) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getLeague()
         viewModel.league.observe(viewLifecycleOwner) {
             with(binding) {
                 tvD1CG.text = it.D1CG

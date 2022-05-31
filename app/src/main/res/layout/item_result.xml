@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/grey"
+    style="@style/CardItem"
     app:cardElevation="5dp"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        style="@style/BackgroundFront">
 
         <ImageView
             android:id="@+id/imgEmblem"
@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            style="@style/TextDefault"
             tools:text="tvNameTeam"
             app:layout_constraintStart_toEndOf="@+id/imgEmblem"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            style="@style/TextDefault"
             tools:text="tvSymbols"
             app:layout_constraintStart_toStartOf="@+id/tvNameTeam"
             app:layout_constraintTop_toBottomOf="@+id/tvNameTeam" />
@@ -45,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            style="@style/TextGrey"
             tools:text="tvType"
             app:layout_constraintStart_toEndOf="@+id/divider"
             app:layout_constraintTop_toTopOf="@+id/tvSymbol" />
@@ -64,18 +67,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            style="@style/TextGrey"
             tools:text="Date"
             app:layout_constraintStart_toStartOf="@+id/tvSymbol"
             app:layout_constraintTop_toBottomOf="@+id/tvSymbol" />
 
         <TextView
             android:id="@+id/tvScore"
+            style="@style/TextScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            tools:text="tvScore"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNameTeam"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/tvNameTeam"
+            tools:text="tvScore" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

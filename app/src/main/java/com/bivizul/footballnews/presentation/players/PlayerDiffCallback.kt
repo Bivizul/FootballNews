@@ -2,7 +2,6 @@ package com.bivizul.footballnews.presentation.players
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bivizul.footballnews.domain.models.Player
-import com.bivizul.footballnews.domain.models.TeamInfo
 
 object PlayerDiffCallback : DiffUtil.ItemCallback<Player>() {
 

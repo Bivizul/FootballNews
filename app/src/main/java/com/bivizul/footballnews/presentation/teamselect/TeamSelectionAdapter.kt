@@ -3,10 +3,9 @@ package com.bivizul.footballnews.presentation.teamselect
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
+import coil.load
 import com.bivizul.footballnews.databinding.ItemTeamSelectBinding
 import com.bivizul.footballnews.domain.models.TeamInfo
-import com.bivizul.footballnews.presentation.teamselect.TeamSelectDiffCallback
-import com.bivizul.footballnews.presentation.teamselect.TeamSelectViewHolder
 
 class TeamSelectionAdapter() : ListAdapter<TeamInfo, TeamSelectViewHolder>(TeamSelectDiffCallback) {
 
@@ -32,6 +31,7 @@ class TeamSelectionAdapter() : ListAdapter<TeamInfo, TeamSelectViewHolder>(TeamS
         with(holder.binding) {
             with(item) {
                 tvSearchItem.text = name
+                imgSearchItem.load(icon)
                 root.setOnClickListener {
                     onTeamItemClickListener?.invoke(item)
                 }

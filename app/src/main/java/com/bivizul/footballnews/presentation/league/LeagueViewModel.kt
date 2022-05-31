@@ -19,7 +19,11 @@ class LeagueViewModel @Inject constructor(private val repository: ApiRepository)
     val league: LiveData<League>
         get() = _league
 
-    fun getLeague() {
+    init {
+        getLeague()
+    }
+
+    private fun getLeague() {
         viewModelScope.launch {
             repository.getLeague().let {
                 if (it.isSuccessful) {
@@ -30,5 +34,4 @@ class LeagueViewModel @Inject constructor(private val repository: ApiRepository)
             }
         }
     }
-
 }

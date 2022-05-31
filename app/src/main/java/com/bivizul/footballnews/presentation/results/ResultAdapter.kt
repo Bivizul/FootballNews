@@ -29,7 +29,7 @@ class ResultAdapter() : ListAdapter<Result, ResultViewHolder>(ResultDiffCallback
         val item = getItem(position)
         with(holder.binding) {
             with(item) {
-                if(emblem.isNotEmpty()){
+                if (emblem.isNotEmpty()) {
                     imgEmblem.load(emblem)
                 } else {
                     imgEmblem.load(Constants.DEFAULT_IMAGE)

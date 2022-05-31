@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/middle_grey"
     android:orientation="vertical"
     tools:context=".presentation.league.LeagueFragment">
 
@@ -13,21 +12,22 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            style="@style/Background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                style="@style/CardItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/grey"
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/BackgroundFront"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="8dp">
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/imgLogoLeft"
@@ -51,6 +51,7 @@
 
                     <TextView
                         android:id="@+id/tvRightTeam"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -60,6 +61,7 @@
 
                     <TextView
                         android:id="@+id/tvScore"
+                        style="@style/TittleTextBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -70,6 +72,7 @@
 
                     <TextView
                         android:id="@+id/tvLeftTeam"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -79,9 +82,10 @@
 
                     <TextView
                         android:id="@+id/tvTittleCardOne"
+                        style="@style/TittleTextBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Previous matches"
+                        android:text="@string/previous_matches"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,19 +103,20 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                style="@style/CardItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/grey"
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/BackgroundFront"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="8dp">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/tvTeam6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -121,10 +126,11 @@
 
                     <TextView
                         android:id="@+id/tvNum6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="6"
+                        android:text="@string/_6"
                         app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
                         app:layout_constraintTop_toBottomOf="@+id/tvNum5CG" />
 
@@ -140,6 +146,7 @@
 
                     <TextView
                         android:id="@+id/tvW6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvWCG"
@@ -149,6 +156,7 @@
 
                     <TextView
                         android:id="@+id/tvD6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvDCG"
@@ -158,6 +166,7 @@
 
                     <TextView
                         android:id="@+id/tvL6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvLCG"
@@ -167,6 +176,7 @@
 
                     <TextView
                         android:id="@+id/tvPlusMinus6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
@@ -176,6 +186,7 @@
 
                     <TextView
                         android:id="@+id/tvPP6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -186,6 +197,7 @@
 
                     <TextView
                         android:id="@+id/tvP6CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPCG"
@@ -195,6 +207,7 @@
 
                     <TextView
                         android:id="@+id/tvTeam5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -204,10 +217,11 @@
 
                     <TextView
                         android:id="@+id/tvNum5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="5"
+                        android:text="@string/_5"
                         app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
                         app:layout_constraintTop_toBottomOf="@+id/tvNum4CG" />
 
@@ -223,6 +237,7 @@
 
                     <TextView
                         android:id="@+id/tvW5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvWCG"
@@ -232,6 +247,7 @@
 
                     <TextView
                         android:id="@+id/tvD5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvDCG"
@@ -241,6 +257,7 @@
 
                     <TextView
                         android:id="@+id/tvL5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvLCG"
@@ -250,6 +267,7 @@
 
                     <TextView
                         android:id="@+id/tvPlusMinus5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
@@ -259,6 +277,7 @@
 
                     <TextView
                         android:id="@+id/tvPP5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -269,6 +288,7 @@
 
                     <TextView
                         android:id="@+id/tvP5CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPCG"
@@ -278,15 +298,17 @@
 
                     <TextView
                         android:id="@+id/tvNum4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="4"
+                        android:text="@string/_4"
                         app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
                         app:layout_constraintTop_toBottomOf="@+id/tvNum3CG" />
 
                     <TextView
                         android:id="@+id/tvTeam4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -296,6 +318,7 @@
 
                     <TextView
                         android:id="@+id/tvP4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPCG"
@@ -305,6 +328,7 @@
 
                     <TextView
                         android:id="@+id/tvW4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvWCG"
@@ -314,6 +338,7 @@
 
                     <TextView
                         android:id="@+id/tvD4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvDCG"
@@ -323,6 +348,7 @@
 
                     <TextView
                         android:id="@+id/tvL4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvLCG"
@@ -332,6 +358,7 @@
 
                     <TextView
                         android:id="@+id/tvPlusMinus4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
@@ -341,6 +368,7 @@
 
                     <TextView
                         android:id="@+id/tvPP4CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -361,15 +389,17 @@
 
                     <TextView
                         android:id="@+id/tvNum3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="48dp"
-                        android:text="3"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/_3"
                         app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
-                        app:layout_constraintTop_toBottomOf="@+id/tvNum1CG" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvNum2CG" />
 
                     <TextView
                         android:id="@+id/tvTeam3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -379,6 +409,7 @@
 
                     <TextView
                         android:id="@+id/tvP3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPCG"
@@ -388,6 +419,7 @@
 
                     <TextView
                         android:id="@+id/tvW3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvWCG"
@@ -397,6 +429,7 @@
 
                     <TextView
                         android:id="@+id/tvD3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvDCG"
@@ -406,6 +439,7 @@
 
                     <TextView
                         android:id="@+id/tvL3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvLCG"
@@ -415,6 +449,7 @@
 
                     <TextView
                         android:id="@+id/tvPlusMinus3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
@@ -424,6 +459,7 @@
 
                     <TextView
                         android:id="@+id/tvPP3CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
@@ -443,6 +479,7 @@
 
                     <TextView
                         android:id="@+id/tvTeam2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -452,10 +489,11 @@
 
                     <TextView
                         android:id="@+id/tvNum2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="2"
+                        android:text="@string/_2"
                         app:layout_constraintStart_toStartOf="@+id/tvNum1CG"
                         app:layout_constraintTop_toBottomOf="@+id/tvNum1CG" />
 
@@ -471,6 +509,7 @@
 
                     <TextView
                         android:id="@+id/tvW2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvWCG"
@@ -480,6 +519,7 @@
 
                     <TextView
                         android:id="@+id/tvD2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvDCG"
@@ -489,6 +529,7 @@
 
                     <TextView
                         android:id="@+id/tvL2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvLCG"
@@ -498,6 +539,7 @@
 
                     <TextView
                         android:id="@+id/tvPlusMinus2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
@@ -507,6 +549,7 @@
 
                     <TextView
                         android:id="@+id/tvPP2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
@@ -516,6 +559,7 @@
 
                     <TextView
                         android:id="@+id/tvP2CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPCG"
@@ -525,63 +569,70 @@
 
                     <TextView
                         android:id="@+id/tvPCG"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:text="P"
+                        android:text="@string/p"
                         app:layout_constraintEnd_toStartOf="@+id/tvWCG"
                         app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
 
                     <TextView
                         android:id="@+id/tvWCG"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:text="W"
+                        android:text="@string/w"
                         app:layout_constraintEnd_toStartOf="@+id/tvDCG"
                         app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
 
                     <TextView
                         android:id="@+id/tvDCG"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:text="D"
+                        android:text="@string/d"
                         app:layout_constraintEnd_toStartOf="@+id/tvLCG"
                         app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
 
                     <TextView
                         android:id="@+id/tvLCG"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:text="L"
+                        android:text="@string/l"
                         app:layout_constraintEnd_toStartOf="@+id/tvPlusMinusCG"
                         app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
 
                     <TextView
                         android:id="@+id/tvPlusMinusCG"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:text="+/-"
+                        android:text="@string/plus_minus"
                         app:layout_constraintEnd_toStartOf="@+id/tvPPCG"
                         app:layout_constraintTop_toTopOf="@+id/tvPPCG" />
 
                     <TextView
                         android:id="@+id/tvPPCG"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="P"
+                        android:text="@string/p"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/tvTeamCG" />
 
                     <TextView
                         android:id="@+id/tvTittleCG"
+                        style="@style/TittleTextBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Championship Group"
+                        android:text="@string/championship_group"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -597,25 +648,28 @@
 
                     <TextView
                         android:id="@+id/tvTeamCG"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Team"
+                        android:text="@string/team"
                         app:layout_constraintStart_toStartOf="@+id/tvTeam1CG"
                         app:layout_constraintTop_toBottomOf="@+id/dividerCardTwo" />
 
                     <TextView
                         android:id="@+id/tvNum1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
-                        android:text="1"
+                        android:text="@string/_1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvTeamCG" />
 
                     <TextView
                         android:id="@+id/tvTeam1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -635,6 +689,7 @@
 
                     <TextView
                         android:id="@+id/tvP1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPCG"
@@ -644,6 +699,7 @@
 
                     <TextView
                         android:id="@+id/tvD1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvDCG"
@@ -653,6 +709,7 @@
 
                     <TextView
                         android:id="@+id/tvL1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvLCG"
@@ -662,6 +719,7 @@
 
                     <TextView
                         android:id="@+id/tvPlusMinus1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPlusMinusCG"
@@ -671,6 +729,7 @@
 
                     <TextView
                         android:id="@+id/tvPP1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPPCG"
@@ -680,6 +739,7 @@
 
                     <TextView
                         android:id="@+id/tvW1CG"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvWCG"
@@ -691,20 +751,21 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                style="@style/CardItem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/grey"
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/BackgroundFront"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="8dp">
+                    android:layout_height="match_parent">
 
 
                     <TextView
                         android:id="@+id/tvName7TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -714,6 +775,7 @@
 
                     <TextView
                         android:id="@+id/tvP7TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -724,6 +786,7 @@
 
                     <TextView
                         android:id="@+id/tvG7TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -734,6 +797,7 @@
 
                     <TextView
                         android:id="@+id/tvP8TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -744,6 +808,7 @@
 
                     <TextView
                         android:id="@+id/tvG8TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -754,6 +819,7 @@
 
                     <TextView
                         android:id="@+id/tvP9TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -764,6 +830,7 @@
 
                     <TextView
                         android:id="@+id/tvG9TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -774,6 +841,7 @@
 
                     <TextView
                         android:id="@+id/tvP10TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -784,6 +852,7 @@
 
                     <TextView
                         android:id="@+id/tvG10TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -794,16 +863,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam10TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName10TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName10TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -813,16 +883,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam9TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName9TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName9TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -832,16 +903,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam8TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName8TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName8TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -851,16 +923,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam7TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName7TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName6TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -870,6 +943,7 @@
 
                     <TextView
                         android:id="@+id/tvG6TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -880,6 +954,7 @@
 
                     <TextView
                         android:id="@+id/tvP6TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -890,16 +965,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam6TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName6TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName5TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -909,6 +985,7 @@
 
                     <TextView
                         android:id="@+id/tvG5TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -919,6 +996,7 @@
 
                     <TextView
                         android:id="@+id/tvP5TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -929,16 +1007,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam5TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName5TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName4TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -948,6 +1027,7 @@
 
                     <TextView
                         android:id="@+id/tvG4TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -958,6 +1038,7 @@
 
                     <TextView
                         android:id="@+id/tvP4TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -968,16 +1049,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam4TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName4TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName3TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -987,6 +1069,7 @@
 
                     <TextView
                         android:id="@+id/tvG3TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -997,6 +1080,7 @@
 
                     <TextView
                         android:id="@+id/tvP3TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -1007,16 +1091,17 @@
 
                     <TextView
                         android:id="@+id/tvTeam3TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName3TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvName2TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -1026,6 +1111,7 @@
 
                     <TextView
                         android:id="@+id/tvG2TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -1035,6 +1121,7 @@
 
                     <TextView
                         android:id="@+id/tvP2TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvPTS"
@@ -1045,21 +1132,20 @@
 
                     <TextView
                         android:id="@+id/tvTeam2TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName2TS"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tvTittleTS"
+                        style="@style/TittleTextBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:text="Topscorers"
+                        android:text="@string/topscorers"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -1075,25 +1161,28 @@
 
                     <TextView
                         android:id="@+id/tvGTS"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="G"
+                        android:text="@string/g"
                         app:layout_constraintEnd_toStartOf="@+id/tvPTS"
                         app:layout_constraintTop_toTopOf="@+id/tvPTS" />
 
                     <TextView
                         android:id="@+id/tvPTS"
+                        style="@style/TextGrey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:text="P"
+                        android:text="@string/p"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
                     <TextView
                         android:id="@+id/tvP1TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -1104,6 +1193,7 @@
 
                     <TextView
                         android:id="@+id/tvG1TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@+id/tvGTS"
@@ -1113,6 +1203,7 @@
 
                     <TextView
                         android:id="@+id/tvName1TS"
+                        style="@style/TextDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -1122,10 +1213,10 @@
 
                     <TextView
                         android:id="@+id/tvTeam1TS"
+                        style="@style/TextGreySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="@+id/tvName1TS"
                         app:layout_constraintTop_toBottomOf="@+id/tvName1TS"
                         tools:text="TextView" />
@@ -1134,11 +1225,5 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <!--    <include-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        layout="@layout/item_player"-->
-    <!--        />-->
 
 </FrameLayout>

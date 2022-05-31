@@ -1,13 +1,10 @@
 package com.bivizul.footballnews.presentation.home
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import by.kirich1409.viewbindingdelegate.viewBinding
 import coil.load
 import com.bivizul.footballnews.R
@@ -15,11 +12,10 @@ import com.bivizul.footballnews.databinding.FragmentHomeBinding
 import com.bivizul.footballnews.presentation.viewmodels.TeamViewModel
 import com.bivizul.footballnews.utils.Constants
 import com.bivizul.footballnews.utils.Constants.DEFAULT_IMAGE
-import com.bivizul.footballnews.utils.Constants.TAG
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment(private val teamSelect:Int = 2) : Fragment(R.layout.fragment_home) {
+class HomeFragment() : Fragment(R.layout.fragment_home) {
 
     private val viewModel by viewModels<TeamViewModel>()
     private val binding by viewBinding(FragmentHomeBinding::bind)
@@ -27,15 +23,15 @@ class HomeFragment(private val teamSelect:Int = 2) : Fragment(R.layout.fragment_
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d(TAG, "SelectHome: $teamSelect")
-        viewModel.getTeamInfo()
+        val preferences =
+            requireActivity().getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE)
+        val teamSelect = preferences.getInt(Constants.TEAM_ID, Constants.PREF_TEAM_ZERO)
+
         viewModel.teamInfo.observe(viewLifecycleOwner) {
-            Log.d(TAG, "it: ${it}")
             for (element in it) {
                 if (element.id == teamSelect) {
-                    Log.d(TAG, "element: $element")
-                    with(binding){
-                        if(element.icon.isNotEmpty()){
+                    with(binding) {
+                        if (element.icon.isNotEmpty()) {
                             imgTeam.load(element.icon)
                         } else {
                             imgTeam.load(DEFAULT_IMAGE)

@@ -5,11 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import coil.load
 import com.bivizul.footballnews.databinding.ItemPlayerBinding
-import com.bivizul.footballnews.databinding.ItemTeamSelectBinding
 import com.bivizul.footballnews.domain.models.Player
-import com.bivizul.footballnews.domain.models.TeamInfo
-import com.bivizul.footballnews.presentation.teamselect.TeamSelectDiffCallback
-import com.bivizul.footballnews.presentation.teamselect.TeamSelectViewHolder
 import com.bivizul.footballnews.utils.Constants.DEFAULT_PLAYER
 
 class PlayerAdapter() : ListAdapter<Player, PlayerViewHolder>(PlayerDiffCallback) {
@@ -36,14 +32,12 @@ class PlayerAdapter() : ListAdapter<Player, PlayerViewHolder>(PlayerDiffCallback
                 tvName.text = name
                 tvType.text = type
                 tvCountry.text = country
-
                 imgFlag.load(flag)
-                if(photo.isNotEmpty()){
+                if (photo.isNotEmpty()) {
                     imgPlayer.load(photo)
                 } else {
                     imgPlayer.load(DEFAULT_PLAYER)
                 }
-
             }
         }
     }

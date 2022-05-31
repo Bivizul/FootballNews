@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "480991987001",
+    "project_id": "footballnews-84d77",
+    "storage_bucket": "footballnews-84d77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480991987001:android:7dd91223a05e1ab8e7d4e8",
+        "android_client_info": {
+          "package_name": "com.bivizul.footballnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480991987001-49ma6tvcu6l420c8d61t750q2nqr91ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJX02N9Ild0RTIauoPTfGw5O86YWb8tsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480991987001-49ma6tvcu6l420c8d61t750q2nqr91ao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,8 +15,11 @@
     <color name="red">#FF0303</color>
     <color name="violet">#3f497a</color>
     <color name="dark_grey">#424242</color>
+    <color name="very_dark_grey">#292929</color>
     <color name="middle_grey">#5C5C5C</color>
     <color name="grey">#939393</color>
+    <color name="light_grey">#DADADA</color>
+    <color name="light_white">#EFEFEF</color>
 
     <color name="transparentGrey">#809E9E9E</color>
 

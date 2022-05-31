@@ -7,7 +7,6 @@ buildscript {
         room_version = "2.4.2"
         retrofit_version = "2.9.0"
         okhttp_version = "4.9.3"
-        picasso_version = "2.71828"
         nav_version = "2.4.2"
     }
     repositories {
@@ -18,7 +17,7 @@ buildscript {
     dependencies {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.41'
-//        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.14.0'
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.14.0'
     }
 }
 

@@ -4,16 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/grey"
     app:cardElevation="5dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    style="@style/CardItem">
+
+    <ImageView
+        android:id="@+id/imgSearchItem"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvSearchItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/TextTeamSelect"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
         tools:text="TextView" />
 
 </androidx.cardview.widget.CardView>

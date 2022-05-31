@@ -29,7 +29,11 @@ class TeamViewModel@Inject constructor(private val repository: ApiRepository) : 
     val results: LiveData<List<Result>>
         get() = _results
 
-    fun getTeamInfo() {
+    init {
+        getTeamInfo()
+    }
+
+    private fun getTeamInfo() {
         viewModelScope.launch {
             repository.getTeamList().let {
                 if (it.isSuccessful) {

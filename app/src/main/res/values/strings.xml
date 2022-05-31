@@ -5,4 +5,32 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="overview">Overview</string>
+    <string name="previous_matches">Previous matches</string>
+    <string name="championship_group">Championship Group</string>
+    <string name="topscorers">Topscorers</string>
+    <string name="team">Team</string>
+    <string name="p">P</string>
+    <string name="w">W</string>
+    <string name="d">D</string>
+    <string name="l">L</string>
+    <string name="plus_minus">+/-</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="g">G</string>
+    <string name="website">Website</string>
+    <string name="founded">Founded</string>
+    <string name="nickname_s">Nickname(s)</string>
+    <string name="full_name">Full name</string>
+    <string name="name">Name</string>
+    <string name="capacity">Capacity</string>
+    <string name="comporate">Comporate</string>
+    <string name="chairman">Chairman</string>
+    <string name="staff">Staff</string>
+    <string name="manager">Manager</string>
+    <string name="venue">Venue</string>
 </resources>
