@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.browser.customtabs.CustomTabsIntent
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -21,8 +20,11 @@ import com.bivizul.footballnews.utils.Constants.SPLASH_IMAGE
 import com.bivizul.footballnews.utils.Constants.SPLASH_MILLIS
 import com.bivizul.footballnews.utils.Constants.TAG
 import com.bivizul.footballnews.utils.Constants.TEAM_ID
-import com.bivizul.footballnews.utils.Constants.TEAM_SELECT
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.*
 
 @AndroidEntryPoint
@@ -43,6 +45,8 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.d(TAG, "Splash onViewCreated")
+
         val locale = getCurrentLocale(requireContext())
 
         if (darkThemeCheck) {
@@ -55,19 +59,17 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
         viewModel.getSplash(locale!!)
         viewModel.splash.observe(viewLifecycleOwner) {
-            if (it.url == "no") {
-                if (teamSelect == PREF_TEAM_ZERO) {
-                    view.postDelayed({
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(SPLASH_MILLIS)
+                if (it.url == "no") {
+                    if (teamSelect == PREF_TEAM_ZERO) {
                         findNavController().navigate(R.id.action_splashFragment_to_teamSelectFragment)
-                    }, SPLASH_MILLIS)
+                    } else {
+                        findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
+                    }
                 } else {
-                    view.postDelayed({
-                        findNavController().navigate(R.id.action_splashFragment_to_mainFragment,
-                            bundleOf(TEAM_SELECT to teamSelect))
-                    }, SPLASH_MILLIS)
+                    setUrl(it.url)
                 }
-            } else {
-                setUrl(it.url)
             }
         }
         Log.d(TAG, "teamSelectSplash: $teamSelect")
@@ -81,5 +83,14 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     private fun getCurrentLocale(context: Context): Locale? =
         context.resources.configuration.locales[0]
-}
 
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "Splash onResume")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "Splash onDestroy")
+    }
+}

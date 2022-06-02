@@ -13,6 +13,7 @@ import com.bivizul.footballnews.databinding.FragmentTeamSelectBinding
 import com.bivizul.footballnews.presentation.viewmodels.TeamViewModel
 import com.bivizul.footballnews.utils.Constants
 import com.bivizul.footballnews.utils.Constants.APP_PREFERENCES
+import com.bivizul.footballnews.utils.Constants.TAG
 import com.bivizul.footballnews.utils.Constants.TEAM_ID
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,7 +29,7 @@ class TeamSelectFragment : Fragment(R.layout.fragment_team_select) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        Log.d(TAG,"TeamSelect onViewCreated")
         setupRecycleView()
 
         viewModel.teamInfo.observe(viewLifecycleOwner) {
