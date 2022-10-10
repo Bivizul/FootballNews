@@ -1,6 +1,6 @@
 # FootballNews
 
-<img src="assets/1.png" width="500">
+<img src="assets/1.png" width="300">
 
 ![](assets/2.png)
 ![](assets/3.png)
