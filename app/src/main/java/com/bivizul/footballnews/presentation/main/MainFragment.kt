@@ -84,10 +84,10 @@ class MainFragment : Fragment(R.layout.fragment_main),
             viewPager.adapter = PagerAdapter(requireActivity())
             TabLayoutMediator(tabLayout, viewPager) { tab, position ->
                 when (position) {
-                    0 -> tab.text = "Home"
-                    1 -> tab.text = "Result"
-                    2 -> tab.text = "League"
-                    else -> tab.text = "Players"
+                    0 -> tab.text = getString(R.string.home)
+                    1 -> tab.text = getString(R.string.result)
+                    2 -> tab.text = getString(R.string.league)
+                    else -> tab.text = getString(R.string.players)
                 }
             }.attach()
 

@@ -5,7 +5,7 @@ object Constants {
     const val TAG = "checkData"
 
     const val SPLASH_MILLIS = 3000L
-    const val COUNTER_VIEWPAGER = 4     // количество вкладок во ViewPager
+    const val COUNTER_VIEWPAGER = 4
 
     // Preference
     const val APP_PREFERENCES = "APP_PREFERENCES"
@@ -16,10 +16,11 @@ object Constants {
     const val PREF_DARK_THEME = false
     const val NOTIFICATION_CHECK = "NOTIFICATION_CHECK"
     const val PREF_NOTIFICATION = true
+    const val NO = "no"
 
     // Download
     const val ONESIGNAL_APP_ID = "b11ca421-54a2-488d-b07b-1ef7ad6252e6"
-    const val BASE_URL = "http://65.109.10.118"
+    const val BASE_URL = "http://65.109.10.118/"
     const val DEFAULT_PLAYER = "http://65.109.10.118/5footballnews/images/default_player.jpg"
     const val DEFAULT_IMAGE = "http://65.109.10.118/5footballnews/images/no_image.png"
     const val SPLASH_IMAGE = "http://65.109.10.118/5footballnews/images/ball.jpg"

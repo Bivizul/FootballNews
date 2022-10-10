@@ -24,10 +24,8 @@ class SplashViewModel @Inject constructor(private val repository: ApiRepository)
         get() = _splash
 
     fun getSplash(send: Locale) {
-        Log.d(TAG,"getSplash")
         viewModelScope.launch(Dispatchers.IO) {
             repository.getSplash(send).let {
-                    Log.d(TAG,"Answer: ${it.body()}")
                 if (it.isSuccessful) {
                     _splash.postValue(it.body())
                 } else {

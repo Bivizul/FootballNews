@@ -20,7 +20,6 @@ object AppModule {
     fun baseUrl() = BASE_URL
 
     @Provides
-    // HttpLoggingInterceptor отображает информацию в логи при отправлении запроса retrofita на сервер
     fun logging() = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)
 

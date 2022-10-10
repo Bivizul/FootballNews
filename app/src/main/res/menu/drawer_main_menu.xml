@@ -6,19 +6,19 @@
 
     <item
         android:id="@+id/selectTeam"
-        android:title="Выбор команды" />
+        android:title="@string/select_team" />
 
     <group
         android:id="@+id/settings"
-        android:title="Настройки">
+        android:title="@string/settings">
             <item
                 android:id="@+id/swDarkTheme"
-                android:title="Темная тема"
+                android:title="@string/dark_theme"
                 app:actionLayout="@layout/switch_item_dark_theme"
                 app:showAsAction="ifRoom" />
             <item
                 android:id="@+id/swNotifications"
-                android:title="Уведомления"
+                android:title="@string/notifications"
                 app:actionLayout="@layout/switch_item_notifications"
                 app:showAsAction="ifRoom" />
 
@@ -27,7 +27,7 @@
     <group>
             <item
                 android:id="@+id/exit"
-                android:title="Выход" />
+                android:title="@string/exit" />
 
     </group>
 

@@ -15,6 +15,7 @@ import coil.load
 import com.bivizul.footballnews.R
 import com.bivizul.footballnews.databinding.FragmentSplashBinding
 import com.bivizul.footballnews.utils.Constants
+import com.bivizul.footballnews.utils.Constants.NO
 import com.bivizul.footballnews.utils.Constants.PREF_TEAM_ZERO
 import com.bivizul.footballnews.utils.Constants.SPLASH_IMAGE
 import com.bivizul.footballnews.utils.Constants.SPLASH_MILLIS
@@ -45,8 +46,6 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d(TAG, "Splash onViewCreated")
-
         val locale = getCurrentLocale(requireContext())
 
         if (darkThemeCheck) {
@@ -57,22 +56,27 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
         binding.imageView.load(SPLASH_IMAGE)
 
-        viewModel.getSplash(locale!!)
+
+        try {
+            viewModel.getSplash(locale)
+        } catch (e: Exception) {
+            Log.d("qwer","Exception : $e")
+        }
+
         viewModel.splash.observe(viewLifecycleOwner) {
             CoroutineScope(Dispatchers.Main).launch {
                 delay(SPLASH_MILLIS)
-                if (it.url == "no") {
+//                if (it.url == NO) {
                     if (teamSelect == PREF_TEAM_ZERO) {
                         findNavController().navigate(R.id.action_splashFragment_to_teamSelectFragment)
                     } else {
                         findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
                     }
-                } else {
-                    setUrl(it.url)
-                }
+//                } else {
+//                    setUrl(it.url)
+//                }
             }
         }
-        Log.d(TAG, "teamSelectSplash: $teamSelect")
     }
 
     private fun setUrl(url: String) {
@@ -81,16 +85,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
         customTabsIntent.launchUrl(requireActivity(), Uri.parse(url))
     }
 
-    private fun getCurrentLocale(context: Context): Locale? =
+    private fun getCurrentLocale(context: Context): Locale =
         context.resources.configuration.locales[0]
 
-    override fun onResume() {
-        super.onResume()
-        Log.d(TAG, "Splash onResume")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(TAG, "Splash onDestroy")
-    }
 }
