@@ -1,6 +1,6 @@
 # FootballNews
 
-![](assets/1.png)
+![](assets/1.png =500x500)
 ![](assets/2.png)
 ![](assets/3.png)
 ![](assets/4.png)
